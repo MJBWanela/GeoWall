@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <title>GeoWall</title>
+
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+    <body>
+
+        <div id="cajaMedida" style="position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; z-index: -3"></div>
+        <div id="cajaMenu" class="pantalla">
+            <div class="menu">
+                <div class=" cajaMenuBoton"> 
+                    <div class="btonMenu" onclick="pintamosPantalla(17)">Jugar</div>
+                </div>
+                <div class=" cajaMenuBoton cajaMenuBoton"> 
+                    <div class="btonMenu" onclick="pintamosPantalla(19)">Ranquing</div>
+                </div>
+                <div class=" cajaMenuBoton cajaMenuBoton"> 
+                    <div class="btonMenu" onclick="pintamosPantalla(20)">Option</div>
+                </div>
+                <div class=" cajaMenuBoton cajaMenuBoton"> 
+                    <div class="btonMenu" onclick="pintamosPantalla(22)">INFO</div>
+                </div>
+
+            </div>    
+        </div>
+        <div style="" class="pantalla-disabled pantalla" id="cajaCanvas">
+            <div>
+                <div id="puntos" class="puntosPartidaActual" style="width: 100%"></div>
+            </div>
+            <canvas id="micanvas" width="500" height="500" style="display: inherit;" >
+                <!--     <p >Este texto se muestra para los navegadores no compatibles con canvas.</p>
+                <br>
+                Por favor, utiliza Firefox, Chrome, Safari u Opera. -->
+            </canvas>
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaPuntuaciones">
+            <div class="pantalla-puntuaje">
+                <h1 id="puntuacionPartida" style="z-index: 2;" ></h1>
+                <img src="img/firework.gif" style="-webkit-filter: blur(3px) grayscale(100%); filter: blur(3px) grayscale(100%); z-index: 1" />
+                <div onclick="pintamosPantalla(17)" class="btnBottomLeft" style="">Reintentar</div>
+                <div onclick="pintamosPantalla(16)" class="btnBottomRight" style="">Volver</div>
+
+            </div>
+
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaRanking">
+
+
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaOption">
+            <div id="cambiarNick" class="seption-Option">
+                <h3>Usuario</h3>
+                <div class="cajaNameOption">
+                    <input type="text" id="optionNick"/><div class="btnCheck" onclick="cambiaNombre(obtenerElementoID('optionNick').value)"></div>     
+                </div>
+            </div>
+            <div id="muestraPuntos" class="seption-Option">
+                <h3>Maximo Puntos Conseguido</h3>
+                <span id="optionPuntos"></span>       
+            </div>
+            <div id="muestraLevel" class="seption-Option">
+                <h3>Maximo Level Conseguido</h3>
+                <span id="optionLevel"></span>       
+            </div>
+            <div id="muestraSound" class="seption-Option">
+                <h3>Sonido</h3>
+
+                <input id="optionSound" type="checkbox" checked="checked" onchange="guardamosSonido()" />
+
+
+            </div>       
+                                <div onclick="pintamosPantalla(16)" class="btnBottomRight" style="">Volver</div>
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaOption1">
+            <div id="cambiarNick1" class="seption-Option">
+                <h3>Introduzca un usuario valido</h3>
+
+                <div class="">
+                    <input type="text" id="optionNick1"/>
+                    <p class="letra_pequena">max 20 caracteres</p>
+                    <div class="btnCheck1" id="btnCheck1" onclick="cambiaNombre(obtenerElementoID('optionNick1').value)">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaInstrucciones">
+            <div class="boxInstrucciones">            
+                <h3>Instrucciones</h3>        
+                <h5>El juego es lo mas sencillo que hay.</h5>
+                <h5>Por un lado disponemos de un muro que tienen una figura "tallada" o el hueco de una figura, este muro irá bajando hasta "tocar el fondo de nuestra pantalla" </h5>
+                <h5>Por otro lado disponemos de figuras, las cuales al coincidar el muro con el "suelo" de nuestra pantalla, la figura del muro y la figura inferior deben coincidir.</h5>
+                <h5>Para cambiar de figura solo tendremos que tocar nuestra pantalla</h5>
+                <img src="img/InstruccionesGoodl.png" style="width: 30%; margin-left: 10%;"/>
+                <img src="img/InstruccionesFail.png"  style="width: 30%; margin-left: 10%;" />
+                <br>
+            <br>
+            <h3>Funcionalidad</h3>        
+            <h5>Este juego no es requisito necesario el internet, por lo que si eres de los que van por la vida disfrutando de las buenas conexiones wifi publicas, o de los que no le gustan estar conectados 24 horas, es ideal para ustedes.
+                <br>
+                    Eso sin olvidar, que al ser tan facil su jugabilidad te ayudará a desconectar.                
+            </h5>
+            <p>No puede faltar mencionar que tus datos serán tratados y entraran en la base de datos de majiba.com, los datos serán (en letra muy pequeña)<span class= "letra_pequena" >Nombre de Usuario, puntuacion, numero de veces que se ha jugado, algunas fechas de conexion, y en un futuro su cuenta del la tienda de apps </span></p>            
+
+            <div onclick="pintamosPantalla(16)" class="btnBottomRightInfo" style="">Volver</div>
+            </div>
+        </div>
+        <div class="pantalla-disabled pantalla" id="cajaError">
+            <div id="MensajeError" class="seption-Option">
+                <h3>Lo setimos, no puede disfurtar de nuestro miegda jueguecillo</h3>        
+                <h5>Le recomendamos dos opciones:</h5>
+                <h6>1. Busque pareja de Juegos ;), en caso de disponer de ella, "Juegue" a algo mas divertido que el movil</h6>
+                <h6>2.Actualize su movil a ultima version y vuelva a intentarlo. En caso de reproducirse el error informenos</h6>
+            </div>
+        </div>
+        <div class="cajaPublicidad" id="cajaPublicidad">
+            
+        </div>
+
+
+        <!--Definimos las variables-->
+        <script type="text/javascript" src="js/defines.js"></script>
+        <!--sera nuestro contolador-->
+        <script type="text/javascript" src="js/controlador.js"></script>
+        <!--aqui se actualizan los datos del Storage-->
+        <script type="text/javascript" src="js/controlDatos.js"></script>
+
+        <script type="text/javascript" src="js/funciones.js"></script>
+        <!--aqui esta todo los recursos Webs-->
+        <script type="text/javascript" src="js/comunicacionRed.js"></script>
+        <!--aqui seran las actualizaciones de las pantallas ha excepcion de la pantalla juego-->
+        <script type="text/javascript" src="js/controlDePantallas.js"></script>
+        <script type="text/javascript" src="js/gamePintado.js"></script>
+        <script type="text/javascript" src="js/gameControl.js"></script>
+        <script type="text/javascript" src="js/ads.js"></script>
+        <script>
+            window.onload = function () {
+                if (canvas.getContext) {
+                }else{
+                    pintamosPantalla(23);
+                }
+            };
+        </script>
+
+        <script type="text/javascript" src="js/cargaInicial.js"></script>
+    </body>
+</html>
