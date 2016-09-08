@@ -38,25 +38,25 @@ function pintamosPantalla(pantalla){
             
         break;
         case 18: 
-            cajaPuntuaciones.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue;');
+            cajaPuntuaciones.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; ');
             mostramosPuntuacionCorrecta();
         break;
         case 19:                         
             pintarListado();
-            cajaRanking.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue;');                        
+            cajaRanking.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; ');                        
         break;
         case 20:
             actualizarOptions();
-            cajaOption.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue; text-align: center;');                        
+            cajaOption.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0;  text-align: center;');                        
         break;
         case 21:
-            cajaOption1.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue; text-align: center;');                        
+            cajaOption1.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0;  text-align: center;');                        
         break;
         case 22:
-            cajaInstrucciones.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue; text-align: center;');                        
+            cajaInstrucciones.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0;  text-align: center;');                        
         break;
         case 22:
-            cajaError.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; border: 1px solid blue; text-align: center;');                        
+            cajaError.setAttribute('style','display: block; position: absolute; left: 0; top: 0; bottom:0; right:0; text-align: center;');                        
         break;
     }
 }

@@ -97,7 +97,7 @@ var figuraslevel =0;
  * 
  * @param Number velocidad, tiempo en milesegundos que se reproducira la imagen;
  */
-var velocidad = 40;
+var velocidad = 45;
 /**
  * 
  * @param  maxDeImagenes, será el numero maximo de imagenes
@@ -136,7 +136,7 @@ contadorImagen = 0;
 valorSombra = 0;
 level = 1;
 figuraslevel =0;
-velocidad = 40;
+velocidad = 45;
 maxDeImagenes = 19;
 nImagenes = 2;
 timeEmpiza = 0;

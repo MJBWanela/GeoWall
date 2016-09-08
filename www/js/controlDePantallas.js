@@ -98,10 +98,35 @@ function puntosDePartida(){
  * Puntos al final de la partida
  */
 function mostramosPuntuacionCorrecta(){
-    var h1puntuacion = document.getElementById("puntuacionPartida");    
+    var h1puntuacion = document.getElementById("puntuacionPartida");  
+    var levelPartida = document.getElementById("levelPartida");  
+    var mensaje = document.getElementById("mensaje");    
+  
     var texto = document.createTextNode(""+ puntuacion);
+    var textlevel = document.createTextNode("Level : "+level+"/20");
+
+    var textmensaje ="";
+
+    if(level<5){
+        textmensaje = document.createTextNode("jo jo jo jo");    
+    }else if(level >=5 && level <10){
+        textmensaje = document.createTextNode("Ok! ;)");
+    }else if(level >=10 && level <15){
+        textmensaje = document.createTextNode("Only one more!");
+    }else if(level >=15){
+        textmensaje = document.createTextNode("PRO!");
+    }
+
+    while(mensaje.firstChild){
+        mensaje.removeChild(mensaje.firstChild);
+    }
     while(h1puntuacion.firstChild){
         h1puntuacion.removeChild(h1puntuacion.firstChild);
     }
+    while(levelPartida.firstChild){
+        levelPartida.removeChild(levelPartida.firstChild);
+    }
+    levelPartida.appendChild(textlevel);
     h1puntuacion.appendChild(texto);
+    mensaje.appendChild(textmensaje);
 }

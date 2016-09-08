@@ -82,10 +82,9 @@ puntos final de partida
 #micanvas{
          background-color: #444;   
         }
-#puntuacionPartida{
+.mensaje-finPartida{
 	position: absolute; 
 	left: 0;  
-	top: 30%; 
 	text-align: center; 
 	width: 100%; 
 	padding-top: 0.5em; 
@@ -93,6 +92,15 @@ puntos final de partida
 	font-weight: 800;
 	font-size: xx-large;
     color: #444;
+}
+#puntuacionPartida{
+    top: 30%; 
+}
+#levelPartida{    
+    top: 40%; 
+}
+#mensaje{
+    top: 50%;
 }
 .btnBottomLeft{
 	    background-image: url(../img/floor_b.jpg);

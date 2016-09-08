@@ -62,7 +62,7 @@ function finalizarPartida() {
 
 
 function reiniciamosElMuro() {
-    console.log("puntuacion:" + puntuacion + "---velocidad:" + velocidad + "---timeEmpieza" + timeEmpiza + "---level" + level + "figuraslevel" + figuraslevel);
+    //console.log("puntuacion:" + puntuacion + "---velocidad:" + velocidad + "---timeEmpieza" + timeEmpiza + "---level" + level + "figuraslevel" + figuraslevel);
     puntuacion = puntuacion + ((timeNoCambia - timeEmpiza) * level);
     puntosDePartida();
     //Le cambiamos el valor a ValorY que es el que vamos a utilizar
@@ -70,7 +70,7 @@ function reiniciamosElMuro() {
 //le cambiamo la sombra
     valorSombra = Math.floor((Math.random() * nImagenes));
 //le vambiamos el valor de abjao
-    contadorImagen = Math.floor(Math.random() * nImagenes);
+    
 
 
     liampiamoMuro();
@@ -82,7 +82,7 @@ function reiniciamosElMuro() {
         window.clearInterval(gameLoop);
         gameLoop = setInterval(doGameLoop, velocidad);
     }
-
+    //contadorImagen = Math.floor(Math.random() * nImagenes);
     sMuro.play();
 
 }
@@ -92,7 +92,7 @@ function subimoselnivel() {
         level++;
         if (level < 11) {
 
-            velocidad = 40 - level ;
+            velocidad = 45 - level ;
         }
         if (nImagenes < maxDeImagenes) {
             nImagenes++;
@@ -102,7 +102,7 @@ function subimoselnivel() {
         figuraslevel = 0;
         level++;
         if (level < 11) {
-            velocidad = 40 - level ;
+            velocidad = 45 - level ;
         }
         if (nImagenes < maxDeImagenes) {
             nImagenes++;
@@ -123,8 +123,8 @@ function subimoNivel() {
 
 
 function doGameLoop() {
-    console.log("ads"+Math.floor((canvas.height / 80)+(level)))
-    valorY = valorY + Math.floor((canvas.height / 80)+(level));
+    //console.log("ads"+Math.floor((canvas.height / 85)+(level)))
+    valorY = valorY + Math.floor((canvas.height / 85)+(level));
 
     if (valorY >= canvas.height) {
         if (valorSombra === contadorImagen) {

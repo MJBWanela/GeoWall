@@ -58,11 +58,12 @@
         </div>
         <div class="pantalla-disabled pantalla" id="cajaPuntuaciones">
             <div class="pantalla-puntuaje">
-                <h1 id="puntuacionPartida" style="z-index: 2;" ></h1>
+                <h1 id="puntuacionPartida" class="mensaje-finPartida" style="z-index: 2;" ></h1>
+                <h1 id="levelPartida" class="mensaje-finPartida" style="z-index: 2;" ></h1>
+                <h1 id="mensaje" class="mensaje-finPartida" style="z-index: 2;" ></h1>
                 <img src="img/firework.gif" style="-webkit-filter: blur(3px) grayscale(100%); filter: blur(3px) grayscale(100%); z-index: 1" />
                 <div onclick="pintamosPantalla(17)" class="btnBottomLeft" style="">Reintentar</div>
                 <div onclick="pintamosPantalla(16)" class="btnBottomRight" style="">Volver</div>
-
             </div>
 
         </div>
@@ -156,7 +157,7 @@
         <script type="text/javascript" src="js/controlDePantallas.js"></script>
         <script type="text/javascript" src="js/gamePintado.js"></script>
         <script type="text/javascript" src="js/gameControl.js"></script>
-        <script type="text/javascript" src="js/ads.js"></script>
+        
         <script>
             window.onload = function () {
                 if (canvas.getContext) {
@@ -167,5 +168,6 @@
         </script>
 
         <script type="text/javascript" src="js/cargaInicial.js"></script>
+        <script type="text/javascript" src="js/ads.js"></script>
     </body>
 </html>

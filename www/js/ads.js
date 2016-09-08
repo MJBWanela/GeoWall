@@ -24,8 +24,8 @@ function initApp() {
 
   // this will create a banner on startup
   AdMob.createBanner( {
-    adId: admobid.banner,
-    adSize:'CUSTOM',  width:100%, height: distanciadLineas,
+    adId: admobData.banner,
+    adSize:'CUSTOM',  width: '100%' , height: distanciadLineas,
     position: AdMob.AD_POSITION.BOTTOM_CENTER,
     isTesting: true, // TODO: remove this line when release
     overlap: false,
@@ -35,7 +35,7 @@ function initApp() {
 
   // this will load a full screen ad on startup
   AdMob.prepareInterstitial({
-    adId: admobid.interstitial,
+    adId: admobData.interstitial,
     isTesting: true, // TODO: remove this line when release
     autoShow: true
   });
@@ -46,3 +46,4 @@ if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
 } else {
     initApp();
 }
+})
