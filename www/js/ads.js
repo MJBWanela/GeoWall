@@ -1,35 +1,58 @@
 
-function publicidad() {
-
-
-
- var admobid = {};
-    if( /(android)/i.test(navigator.userAgent) ) { // for android
-        admobid = {
-            banner: 'ca-app-pub-2513184903780332/9001044403',
-        };
-    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
-        admobid = {
-            banner: 'ca-app-pub-2513184903780332/9001044403',
-        };
-    } else { // for windows phone
-        admobid = {
-            banner: 'ca-app-pub-2513184903780332/9001044403',
-        };
-    }
-
-
-    // It will display smart banner at top center, using the default options
-    if(AdMob) AdMob.createBanner( {
-    adId: admobid.banner, 
-    position: AdMob.AD_POSITION.TOP_CENTER, 
-    autoShow: true } );
-
-    // Prepare and load ad resource in background, e.g. at begining of game level
-    if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-
-    // Show the interstitial later, e.g. at end of game level
-    if(AdMob) AdMob.showInterstitial();
-
+//initialize the goodies 
+function initAd(){
+        if ( window.plugins && window.plugins.AdMob ) {
+            var ad_units = {
+                ios : {
+                    banner: 'ca-app-pub-2513184903780332/9001044403',                    
+                },
+                android : {
+                    banner: 'ca-app-pub-2513184903780332/9001044403',                    
+                }
+            };
+            var admobid = ( /(android)/i.test(navigator.userAgent) ) ? ad_units.android : ad_units.ios;
+ 
+            window.plugins.AdMob.setOptions( {
+                publisherId: admobid.banner,
+                interstitialAdId: admobid.interstitial,
+                adSize: window.plugins.AdMob.AD_SIZE.SMART_BANNER,  //use SMART_BANNER, BANNER, IAB_MRECT, IAB_BANNER, IAB_LEADERBOARD 
+                bannerAtTop: false, // set to true, to put banner at top 
+                overlap: true, // banner will overlap webview 
+                offsetTopBar: false, // set to true to avoid ios7 status bar overlap                 
+                autoShow: true // auto show interstitial ad when loaded 
+            });
+ 
+            registerAdEvents();
+        } else {
+            //alert( 'admob plugin not ready' ); 
+        }
 }
-document.addEventListener('deviceready', publicidad, false);
+//functions to allow you to know when ads are shown, etc. 
+function registerAdEvents() {
+        document.addEventListener('onReceiveAd', function(){});
+        document.addEventListener('onFailedToReceiveAd', function(data){});
+        document.addEventListener('onPresentAd', function(){});
+        document.addEventListener('onDismissAd', function(){ });
+        document.addEventListener('onLeaveToAd', function(){ });
+        document.addEventListener('onReceiveInterstitialAd', function(){ });
+        document.addEventListener('onPresentInterstitialAd', function(){ });
+        document.addEventListener('onDismissInterstitialAd', function(){ });
+    }
+ 
+
+
+//display the banner 
+function showBannerFunc(){
+    window.plugins.AdMob.createBannerView();
+}
+//display the interstitial 
+function showInterstitialFunc(){
+    window.plugins.AdMob.createInterstitialView();  //get the interstitials ready to be shown and show when it's loaded. 
+    window.plugins.AdMob.requestInterstitialAd();
+}
+
+if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+    document.addEventListener('deviceready', initApp, false);
+} else {
+    initApp();
+}
