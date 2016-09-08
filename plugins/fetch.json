@@ -1,4 +1,12 @@
 {
+    "cordova-plugin-admob-simple": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-admob-simple"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-network-information": {
         "source": {
             "type": "registry",
@@ -14,5 +22,5 @@
         },
         "is_top_level": true,
         "variables": {}
-    },    
+    }
 }
