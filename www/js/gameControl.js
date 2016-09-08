@@ -48,13 +48,13 @@ function finalizarPartida() {
 
     sMusic.pause();
     sFallo.play();
-    if(puntuacion> localStorage.getItem('puntos')){
-        guardamospuntosWebyOffline();
-    }
+                
     if(level> localStorage.getItem('level')){
         localStorage.setItem('level', level);
     }
     localStorage.setItem('nVecesJugado',""+(parseInt(localStorage.getItem('nVecesJugado'))+1));
+    
+    guardamospuntosWebyOffline();
 
     pintamosPantalla(18);
     

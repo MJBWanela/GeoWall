@@ -92,10 +92,11 @@ function guardamosSonido() {
 }
 
 
-function guardamospuntosWebyOffline(){
-    localStorage.setItem('puntos', puntuacion);
-    guardamosNuve();
-    
+function guardamospuntosWebyOffline(){    
+    if(puntuacion> localStorage.getItem('puntos')){
+        localStorage.setItem('puntos', puntuacion);    
+    }    
+    guardamosNuve();    
 }
 
 function cerrarApp(){

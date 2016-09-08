@@ -18,9 +18,13 @@ function pintarListado(){
         
         divPosition = document.createElement("div");
         divPosition.setAttribute("class", "cell-row-ranking");        
-        divTextPosition = document.createTextNode(""+(1+listadoDePuntuaciones[i].posicion));        
-        divPosition.appendChild(divTextPosition);
-        
+        if(listadoDePuntuaciones[i].posicion==='***'){
+            divTextPosition = document.createTextNode(""+listadoDePuntuaciones[i].posicion);        
+        }else{
+            divTextPosition = document.createTextNode(""+(1+listadoDePuntuaciones[i].posicion));        
+        }
+                        
+        divPosition.appendChild(divTextPosition);        
         divName = document.createElement("div");
         divName.setAttribute("class", "cell-row-ranking ");
         divTextName = document.createTextNode(""+(listadoDePuntuaciones[i].name));
