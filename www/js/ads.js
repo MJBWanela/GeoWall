@@ -1,6 +1,6 @@
 
 //initialize the goodies 
-function initAd(){
+function initApp(){
         if ( window.plugins && window.plugins.AdMob ) {
             var ad_units = {
                 ios : {
