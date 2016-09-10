@@ -12,9 +12,7 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />         
     
     
-    <preference name="permissions" value="none"/>
-    <preference name="android-build-tool" value="gradle" /> 
-    <gap:plugin name="cordova-plugin-admobpro" source="npm" />
+  <gap:plugin name="phonegap-admob" source="npm" />
 
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
     <preference name="orientation" value="portrait"/>
