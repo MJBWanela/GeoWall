@@ -15,10 +15,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-admob": {
+    "cordova-plugin-admob-simple": {
         "source": {
             "type": "registry",
-            "id": "cordova-admob"
+            "id": "cordova-plugin-admob-simple"
         },
         "is_top_level": true,
         "variables": {}
