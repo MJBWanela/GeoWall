@@ -138,7 +138,7 @@ var app = {
     },
     onResize: function () {
         var msg = 'Web view size: ' + window.innerWidth + ' x ' + window.innerHeight;
-        document.getElementById('sizeinfo').innerHTML = msg;
+        document.getElementById('cajaPublicidad').innerHTML = msg;
     },
 
     // -----------------------------------

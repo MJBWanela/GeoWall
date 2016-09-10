@@ -26,7 +26,11 @@ if(localStorage.getItem('id') === null || localStorage.getItem('name')==="NameUs
 
 ajustarPantalla();
 
-initAds();
+//initAds();
+    app.initialize();
+
+app.onResize();
+app.startBannerAds();
 }
 
 
