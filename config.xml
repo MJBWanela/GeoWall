@@ -9,11 +9,7 @@
     </author>
     
     <content src="index.html" />
-
-    <preference name="permissions" value="none"/>
-    <preference name="android-build-tool" value="gradle" /> 
     <gap:plugin name="cordova-plugin-admobpro" source="npm" />
-    
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -23,8 +19,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-
-        <framework src="com.google.android.gms:play-services-ads:+" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
