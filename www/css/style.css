@@ -46,7 +46,7 @@ p {
     left: 0;
     top: 0;
     margin: 0;
-    height: 93.76%;
+    height: 100%;
     width: 100%;
 }
 
@@ -169,7 +169,7 @@ caja Ranking
 **/
 .seption-Option{
 	text-align: center;
-	height: 20%;
+	height: 15%;
 	font-size: larger;
 }
 
@@ -210,14 +210,14 @@ caja Ranking
 .seption-Option h3{
 	font-size: x-large;
 	background-image: url(../img/floor_b.jpg);
-	padding: 0.5em;
+	padding: 0.25em;
 }
 .seption-Option span{
 	font-size: large;
 	font-weight: bold;
 	background-image: url(../img/floor_b.jpg);
-	border-radius: 55em;
-        padding: 0.2em;
+	border-radius: 10em;
+        padding: 0.12em;
 }
 .seption-Option input[type="checkbox"] {
     display: none;

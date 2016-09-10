@@ -111,12 +111,10 @@ function mostramosPuntuacionCorrecta(){
 
     var textmensaje ="";
 
-    if(level<5){
+    if(level<9){
         textmensaje = document.createTextNode("jo jo jo jo");    
-    }else if(level >=5 && level <10){
+    }else if(level >8 && level <15){
         textmensaje = document.createTextNode("Ok! ;)");
-    }else if(level >=10 && level <15){
-        textmensaje = document.createTextNode("Only one more!");
     }else if(level >=15){
         textmensaje = document.createTextNode("PRO!");
     }

@@ -45,7 +45,12 @@ function iniciamosPartida() {
 function finalizarPartida() {
     window.clearInterval(gameLoop);
     canvas.removeEventListener("mousedown", pulsado, false);
-
+    
+    var alePublicidad = Math.floor(Math.random()*3);    
+    if(alePublicidad===1){
+        window.plugins.AdMob.createInterstitialView();
+    }
+    
     sMusic.pause();
     sFallo.play();
                 
@@ -56,6 +61,7 @@ function finalizarPartida() {
     
     guardamospuntosWebyOffline();
 
+    
     pintamosPantalla(18);
     
 }
@@ -67,9 +73,9 @@ function reiniciamosElMuro() {
     puntosDePartida();
     //Le cambiamos el valor a ValorY que es el que vamos a utilizar
     valorY = 1;
-//le cambiamo la sombra
+    //le cambiamo la sombra
     valorSombra = Math.floor((Math.random() * nImagenes));
-//le vambiamos el valor de abjao
+    //le vambiamos el valor de abjao
     
 
 
@@ -82,7 +88,7 @@ function reiniciamosElMuro() {
         window.clearInterval(gameLoop);
         gameLoop = setInterval(doGameLoop, velocidad);
     }
-    //contadorImagen = Math.floor(Math.random() * nImagenes);
+    colorCanvas();    
     sMuro.play();
 
 }
@@ -92,7 +98,7 @@ function subimoselnivel() {
         level++;
         if (level < 11) {
 
-            velocidad = 45 - level ;
+            velocidad = 60 - level ;
         }
         if (nImagenes < maxDeImagenes) {
             nImagenes++;
@@ -102,13 +108,17 @@ function subimoselnivel() {
         figuraslevel = 0;
         level++;
         if (level < 11) {
-            velocidad = 45 - level ;
+            velocidad = 60 - level ;
         }
         if (nImagenes < maxDeImagenes) {
             nImagenes++;
         }
 
         return true;
+    }
+    if(level===21){
+        level = level -1;
+        finalizarPartida();
     }
 
     figuraslevel++;

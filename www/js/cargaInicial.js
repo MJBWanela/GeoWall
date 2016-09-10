@@ -26,12 +26,11 @@ if(localStorage.getItem('id') === null || localStorage.getItem('name')==="NameUs
 
 ajustarPantalla();
 
-//initAds();
-    app.initialize();
+//window.plugins.AdMob.createBannerView();
 
-app.onResize();
-app.startBannerAds();
+
 }
 
 
-window.onload = iniciarGame();
+window.onload = onDocLoad();
+window.onload = onResize();

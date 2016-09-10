@@ -19,7 +19,7 @@ function ajustarPantalla() {
     anchuraFigura = anchura/3;
     alturaFigura = anchura/3;
     
-    canvas.height = altura - (2 * distanciadLineas);
+    canvas.height = altura - (distanciadLineas);
     canvas.width = anchura;
     
     /**
