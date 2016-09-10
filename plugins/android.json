@@ -1,0 +1,22 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-admob": {
+            "PACKAGE_NAME": "com.majiba.GeoWall"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.majiba.GeoWall"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-admobsdk": {
+            "PACKAGE_NAME": "com.majiba.GeoWall"
+        }
+    }
+}
