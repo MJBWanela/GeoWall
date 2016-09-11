@@ -15,6 +15,7 @@
 
      <preference name="orientation" value="portrait"/>
     
+    <gap:plugin name="cordova-admob" source="npm"/>
 
     <access origin="*" />
     <allow-intent href="http://*/*" />
