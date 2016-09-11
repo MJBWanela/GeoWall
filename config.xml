@@ -14,7 +14,9 @@
      <preference name="SplashScreenDelay" value="8000" />
 
      <preference name="orientation" value="portrait"/>
-    
+
+    <preference name="android-build-tool" value="ant" /> 
+    <gap:plugin name="cordova-plugin-admobpro" source="npm" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
