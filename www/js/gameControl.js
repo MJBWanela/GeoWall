@@ -45,12 +45,7 @@ function iniciamosPartida() {
 function finalizarPartida() {
     window.clearInterval(gameLoop);
     canvas.removeEventListener("mousedown", pulsado, false);
-    
-    var alePublicidad = Math.floor(Math.random()*3);    
-    if(alePublicidad===1){
-        window.plugins.AdMob.createInterstitialView();
-    }
-    
+        
     sMusic.pause();
     sFallo.play();
                 

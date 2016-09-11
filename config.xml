@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.majiba.GeoWall" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>GeoWall</name>
-    <description>
+        <description>
         Un juego por aburrimiento
     </description>
     <author email="info@majiba.com" href="http://majiba.com">
        majiba.com
     </author>
-    
     <content src="index.html" />
-    <gap:plugin name="cordova-plugin-admobpro" source="npm" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

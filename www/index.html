@@ -4,96 +4,14 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <title>Hello World</title>
+        <title>GeoWall</title>
         <script type="text/javascript" src="cordova.js"></script>
                 <link rel="stylesheet" href="css/style.css">        
-
         <style type="text/css">
-            html, body { width:100%; height:100%; margin:0; padding:0; overflow:hidden;  }            
-            button { font-size: 22px; }
+            html, body { width:100%; height:100%; margin:0; padding:0; overflow:hidden;  }                        
         </style>
     </head>
-    <body onload="onDocLoad()" onresize="onResize()">
-    <script>
-    function onDocLoad() {
-        if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-            document.addEventListener('deviceready', initApp, false);
-        } else {
-            initApp();
-        }
-    }
-    
-    function initApp() {
-        initAd();
-
-        // display the banner at startup
-        window.plugins.AdMob.createBannerView();
-      
-        // display the interstitial at startup
-        //window.plugins.AdMob.createInterstitialView();
-    }
-    function initAd(){
-        if ( window.plugins && window.plugins.AdMob ) {
-    	    var ad_units = {
-				ios : {
-					banner: 'ca-app-pub-2513184903780332/9001044403',
-					interstitial: 'ca-app-pub-2513184903780332/7396226809'
-				},
-				android : {
-					banner: 'ca-app-pub-2513184903780332/9001044403',
-					interstitial: 'ca-app-pub-2513184903780332/7396226809'
-				},
-				wp8 : {
-					banner: 'ca-app-pub-2513184903780332/9001044403',
-					interstitial: 'ca-app-pub-2513184903780332/7396226809'
-				}
-    	    };
-    	    var admobid = "";
-    	    if( /(android)/i.test(navigator.userAgent) ) {
-    	    	admobid = ad_units.android;
-    	    } else if(/(iphone|ipad)/i.test(navigator.userAgent)) {
-    	    	admobid = ad_units.ios;
-    	    } else {
-    	    	admobid = ad_units.wp8;
-    	    }
-
-            window.plugins.AdMob.setOptions( {
-                publisherId: admobid.banner,
-                interstitialAdId: admobid.interstitial,
-                bannerAtTop: false, // set to true, to put banner at top
-                overlap: false, // set to true, to allow banner overlap webview
-                offsetTopBar: false, // set to true to avoid ios7 status bar overlap
-                isTesting: false, // receiving test ad
-                autoShow: true // auto show interstitial ad when loaded
-            });
-
-            registerAdEvents();
-            
-        } else {
-            alert( 'admob plugin not ready' );
-        }
-    }
-	// optional, in case respond to events
-    function registerAdEvents() {
-    	document.addEventListener('onReceiveAd', function(){});
-        document.addEventListener('onFailedToReceiveAd', function(data){});
-        document.addEventListener('onPresentAd', function(){});
-        document.addEventListener('onDismissAd', function(){ });
-        document.addEventListener('onLeaveToAd', function(){ });
-        document.addEventListener('onReceiveInterstitialAd', function(){ });
-        document.addEventListener('onPresentInterstitialAd', function(){ });
-        document.addEventListener('onDismissInterstitialAd', function(){ });
-    }
-    function onResize() {
-        //var msg = 'web view: ' + window.innerWidth + ' x ' + window.innerHeight;
-        //document.getElementById('sizeinfo').innerHTML = msg;
-        iniciarGame();
-    }
-    </script>
-
-
-
-
+    <body >
         <div id="cajaMedida" style="position: absolute; top:0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; z-index: -3"></div>
         <div id="cajaMenu" class="pantalla">
             <div class="menu">
@@ -225,16 +143,7 @@
         <script type="text/javascript" src="js/gameControl.js"></script>
        <!-- <script type="text/javascript" src="js/index.js"></script> -->
         <script type="text/javascript" src="js/cargaInicial.js"></script>
-    <!--
-    <div id="fullpage">
-    <p>Demo for AdMob Plugin</p>
-    <p><button onclick="window.plugins.AdMob.createBannerView();">create Ad</button> <button onclick="window.plugins.AdMob.destroyBannerView();">remove Ad</button></p>
-    <p><button onclick="window.plugins.AdMob.showAd(true,function(){},function(e){alert(JSON.stringify(e));});">show Ad</button> <button onclick="window.plugins.AdMob.showAd(false);">hide Ad</button></p>
-    <p><button onclick="window.plugins.AdMob.createInterstitialView();">create Interstitial Ad</button></p>
-    <p><button onclick="window.plugins.AdMob.showInterstitialAd(true,function(){},function(e){alert(JSON.stringify(e));});">show Interstitial Ad</button></p>
-    
-    </div>
-    -->
+
     </body>
     
 </html>

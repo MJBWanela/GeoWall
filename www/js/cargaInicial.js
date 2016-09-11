@@ -26,11 +26,7 @@ if(localStorage.getItem('id') === null || localStorage.getItem('name')==="NameUs
 
 ajustarPantalla();
 
-//window.plugins.AdMob.createBannerView();
-
-
 }
 
 
-window.onload = onDocLoad();
-window.onload = onResize();
+window.onload = iniciarGame();
