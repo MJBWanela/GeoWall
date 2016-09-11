@@ -46,9 +46,15 @@ function finalizarPartida() {
     window.clearInterval(gameLoop);
     canvas.removeEventListener("mousedown", pulsado, false);
         
+
     sMusic.pause();
     sFallo.play();
-                
+    
+    var alePublicidad = Math.floor(Math.random()*3);    
+    if(alePublicidad===1){
+        muestarinterstital();
+    }
+
     if(level> localStorage.getItem('level')){
         localStorage.setItem('level', level);
     }

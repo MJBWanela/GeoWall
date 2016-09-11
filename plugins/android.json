@@ -7,16 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-admob": {
-            "PACKAGE_NAME": "com.majiba.GeoWall"
-        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.majiba.GeoWall"
+            "PACKAGE_NAME": "com.majiba.geowall"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.majiba.geowall"
         }
     },
     "dependent_plugins": {
-        "cordova-admobsdk": {
-            "PACKAGE_NAME": "com.majiba.GeoWall"
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.majiba.geowall"
         }
     }
 }

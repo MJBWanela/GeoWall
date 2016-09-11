@@ -12,14 +12,14 @@ function ajustarPantalla() {
     var cajaMedida = document.getElementById("cajaMedida");
 
 //    
-    altura = cajaMedida.scrollHeight;
+    altura = cajaMedida.clientHeight;
     anchura = cajaMedida.scrollWidth;   
     distanciadLineas = Math.floor(altura/16);
         
     anchuraFigura = anchura/3;
     alturaFigura = anchura/3;
     
-    canvas.height = altura - (distanciadLineas);
+    canvas.height = altura - (distanciadLineas+50);
     canvas.width = anchura;
     
     /**
@@ -33,8 +33,7 @@ function ajustarPantalla() {
 
     puntosenlaPartida.setAttribute("style", "height:" + distanciadLineas + "px; vertical-align: middle; max-height:" + distanciadLineas + "px; width: 100%; text-align: center;");
 
-    var cajaPublicidad = obtenerElementoID("cajaPublicidad");
-    cajaPublicidad.setAttribute("style", "height:" + distanciadLineas + "px;");
+   
 }
 
 
